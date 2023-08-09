@@ -88,22 +88,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="git-基本用法"><a href="#git-基本用法" class="headerlink" title="git 基本用法"></a>git 基本用法</h1><ul>
-<li>进入要管理的文件夹</li>
-<li>执行初始化命令<br><code>git init</code></li>
-<li>管理目录下的文件状态<br><code>git status</code><br>注：新增的文件和修改过后的文件都是红色</li>
-<li>管理指定文件（红变绿）<br><code>git add 文件名</code><br><code>git add .</code><br><code>git add -a</code><br><code>git add --all</code></li>
-<li>个人信息配置：用户名、邮箱【一次即可】<br><code>git config --global user.email &quot;Your email&quot;</code><br><code>git config --global user.name &quot;Your Name&quot;</code></li>
-<li>生成版本<br><code>git commit -m &#39;描述信息&#39;</code></li>
-<li>查看版本记录<br><code>git log</code></li>
-</ul>
-<h1 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//报错信息 </span><br><span class="line">//error: pathspec <span class="string">&#x27;XXX&#x27;</span> did not match any file(s) known to git</span><br><span class="line"></span><br><span class="line">git branch //查看本地分支</span><br><span class="line">git branch -a //查看所有分支</span><br><span class="line">git fetch //获取远程分支</span><br><span class="line">git checkout -b &lt;branch_name&gt; origin/&lt;branch_name&gt; //创建本地分支</span><br><span class="line">git branch -d &lt;branch_name&gt; //删除本地分支</span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> &lt;url&gt; //克隆项目</span><br><span class="line">git <span class="built_in">clone</span> -b &lt;branch_name&gt; &lt;url&gt; //克隆指定分支的项目</span><br><span class="line"></span><br><span class="line">git merge //合并分支</span><br><span class="line">git merge &lt;branch_name&gt; //合并分支</span><br></pre></td></tr></table></figure>
-
-<h3 id="Uncommitted-changes"><a href="#Uncommitted-changes" class="headerlink" title="Uncommitted changes"></a>Uncommitted changes</h3><p>Uncommitted changes, however (even staged), will be lost. Make sure to stash and commit anything you need. For that you can run the following:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br></pre></td></tr></table></figure>
-
-<p>And then to reapply these uncommitted changes:</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash pop</span><br></pre></td></tr></table></figure>
+        <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+        
+          <p class="article-more-link">
+            <a href="/2023/08/09/git/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
