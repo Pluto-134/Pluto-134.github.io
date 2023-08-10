@@ -18,6 +18,14 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>Git</tag>
+      
+      <tag>GPG</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -37,16 +45,47 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>Blog</tag>
+      
+      <tag>Github Pages</tag>
+      
+    </tags>
+    
   </entry>
   
   
   
   <entry>
-    <title>git</title>
+    <title>Conda</title>
+    <link href="/2023/08/10/Conda/"/>
+    <url>/2023/08/10/Conda/</url>
+    
+    <content type="html"><![CDATA[<p>Conda是一个开源的软件包管理系统和环境管理系统，用于安装多个版本的软件包及其依赖关系，是Anaconda的包管理器，也可以使用Miniconda独立安装。<br>记录一些常用指令和使用方法</p><span id="more"></span><p>显示版本</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">conda <span class="hljs-comment">--version</span><br></code></pre></td></tr></table></figure><p>在powershell中集成conda：（用于在powershell中激活虚拟环境等，实测会导致powershell冷启动速度大幅降低）</p><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs csharp">conda <span class="hljs-keyword">init</span> powershell<br>conda <span class="hljs-keyword">init</span> --reverse <span class="hljs-meta"># 撤销</span><br></code></pre></td></tr></table></figure><p>创建虚拟环境</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">conda</span> create --name myenv python=<span class="hljs-number">3</span>.<span class="hljs-number">7</span><br></code></pre></td></tr></table></figure><p>激活虚拟环境</p><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs applescript">conda <span class="hljs-built_in">activate</span> myenv<br></code></pre></td></tr></table></figure><p>退出虚拟环境</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">conda deactivate</span><br></code></pre></td></tr></table></figure><p>查看虚拟环境</p><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">conda</span> <span class="hljs-literal">info</span> --envs<br>conda env list<br></code></pre></td></tr></table></figure><p>删除虚拟环境</p><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs lua">conda <span class="hljs-built_in">remove</span> <span class="hljs-comment">--name myenv </span><br></code></pre></td></tr></table></figure><p>安装包</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake">conda <span class="hljs-keyword">install</span> numpy<br>conda <span class="hljs-keyword">install</span> numpy=<span class="hljs-number">1.10</span><br>conda <span class="hljs-keyword">install</span> --<span class="hljs-keyword">file</span> requirements.txt<br></code></pre></td></tr></table></figure><p>增加conda-forge源</p><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs routeros">conda<span class="hljs-built_in"> config </span>--<span class="hljs-built_in">add</span> channels conda-forge<br></code></pre></td></tr></table></figure><p>将新的环境添加到jupyter中<br>安装ipykernel</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">conda <span class="hljs-keyword">install</span> ipykernel<br></code></pre></td></tr></table></figure><p>将环境写入notebook的kernel中</p><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">python -m  ipykernel install --<span class="hljs-keyword">user</span> <span class="hljs-title">--name</span> test<br></code></pre></td></tr></table></figure><p>删除kernel</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">jupyter kernelspec <span class="hljs-keyword">remove</span> <span class="hljs-keyword">test</span> <br></code></pre></td></tr></table></figure><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs jboss-cli">conda <span class="hljs-params">--version</span> <span class="hljs-string">//</span>显示版本<br>conda update conda <span class="hljs-string">//</span>更新conda<br>conda update anaconda <span class="hljs-string">//</span>更新anaconda<br>conda info <span class="hljs-params">--envs</span> <span class="hljs-string">//</span>查看环境<br>activate &lt;env_name&gt; <span class="hljs-string">//</span>激活环境 <br>conda deactivate <span class="hljs-string">//</span>退出环境<br>conda create <span class="hljs-params">--name</span> &lt;env_name&gt; &lt;package_names&gt; <span class="hljs-string">//</span>创建环境<br>conda create <span class="hljs-params">--name</span> &lt;env_name&gt; python=3.6 <span class="hljs-string">//</span>创建环境举例<br>conda env remove <span class="hljs-params">--name</span> &lt;env_name&gt; <span class="hljs-params">--all</span> <span class="hljs-string">//</span>删除环境<br>conda env remove -p &lt;env_path&gt; <span class="hljs-string">//</span>删除环境<br>conda remove -n ML <span class="hljs-params">--all</span> <span class="hljs-string">///</span>删除环境<br><br>conda create <span class="hljs-params">--name</span> &lt;new_env_name&gt; <span class="hljs-params">--clone</span> &lt;copied_env_name&gt; <span class="hljs-string">//</span>复制环境<br>conda search <span class="hljs-params">--full-name</span> &lt;package_full_name&gt;  <span class="hljs-string">//</span>精准搜索<br>conda search &lt;text&gt; <span class="hljs-string">//</span>模糊搜索<br>conda install &lt;package_name&gt; <span class="hljs-string">//</span>安装包<br>conda install &lt;package_name&gt;=&lt;<span class="hljs-keyword">version</span>&gt; <span class="hljs-string">//</span>安装指定版本的包<br>conda install <span class="hljs-params">--name</span> &lt;env_name&gt; &lt;package_name&gt; <span class="hljs-string">//</span>安装包到指定环境<br><br>pip install &lt;package_name&gt; <span class="hljs-string">//</span>安装包,当使用 conda install 无法进行安装时，可以使用pip进行安装<br><span class="hljs-string">//</span>在指定环境中使用pip进行安装包，则需要先切换到指定环境中，再使用pip命令安装包。<br><br>conda list <span class="hljs-string">//</span>查看已安装的包<br>conda list <span class="hljs-params">--name</span> &lt;env_name&gt; <span class="hljs-string">//</span>查看指定环境中已安装的包<br>conda list <span class="hljs-params">--export</span> &gt; &lt;file_name&gt;<span class="hljs-string">.txt</span> <span class="hljs-string">//</span>导出已安装的包<br>conda list <span class="hljs-params">--name</span> &lt;env_name&gt; <span class="hljs-params">--export</span> &gt; &lt;file_name&gt;<span class="hljs-string">.txt</span> <span class="hljs-string">//</span>导出指定环境中已安装的包<br>conda install <span class="hljs-params">--file</span> &lt;file_name&gt;<span class="hljs-string">.txt</span> <span class="hljs-string">//</span>安装已导出的包<br>conda install <span class="hljs-params">--name</span> &lt;env_name&gt; <span class="hljs-params">--file</span> &lt;file_name&gt;<span class="hljs-string">.txt</span> <span class="hljs-string">//</span>安装已导出的包到指定环境<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Conda</tag>
+      
+      <tag>Python</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git</title>
     <link href="/2023/08/09/git/"/>
     <url>/2023/08/09/git/</url>
     
-    <content type="html"><![CDATA[<p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p><span id="more"></span><h1 id="git-基本用法"><a href="#git-基本用法" class="headerlink" title="git 基本用法"></a>git 基本用法</h1><ul><li>进入要管理的文件夹</li><li>执行初始化命令<br><code>git init</code></li><li>管理目录下的文件状态<br><code>git status</code><br>注：新增的文件和修改过后的文件都是红色</li><li>管理指定文件（红变绿）<br><code>git add 文件名</code><br><code>git add .</code><br><code>git add -a</code><br><code>git add --all</code></li><li>个人信息配置：用户名、邮箱【一次即可】<br><code>git config --global user.email &quot;Your email&quot;</code><br><code>git config --global user.name &quot;Your Name&quot;</code></li><li>生成版本<br><code>git commit -m &#39;描述信息&#39;</code></li><li>查看版本记录<br><code>git log</code></li></ul><h1 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">//报错信息 <br>//error: pathspec <span class="hljs-string">&#x27;XXX&#x27;</span> did not match any file(s) known to git<br><br>git branch //查看本地分支<br>git branch -a //查看所有分支<br>git fetch //获取远程分支<br>git checkout -b &lt;branch_name&gt; origin/&lt;branch_name&gt; //创建本地分支<br>git branch -d &lt;branch_name&gt; //删除本地分支<br><br>git <span class="hljs-built_in">clone</span> &lt;url&gt; //克隆项目<br>git <span class="hljs-built_in">clone</span> -b &lt;branch_name&gt; &lt;url&gt; //克隆指定分支的项目<br><br>git merge //合并分支<br>git merge &lt;branch_name&gt; //合并分支<br></code></pre></td></tr></table></figure><h3 id="Uncommitted-changes"><a href="#Uncommitted-changes" class="headerlink" title="Uncommitted changes"></a>Uncommitted changes</h3><p>Uncommitted changes, however (even staged), will be lost. Make sure to stash and commit anything you need. For that you can run the following:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git stash<br></code></pre></td></tr></table></figure><p>And then to reapply these uncommitted changes:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git stash pop<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>Git是一种分布式版本控制系统，下面记录一些常用指令和使用方法</p><span id="more"></span><h1 id="git-基本用法"><a href="#git-基本用法" class="headerlink" title="git 基本用法"></a>git 基本用法</h1><ul><li>进入要管理的文件夹</li><li>执行初始化命令<br><code>git init</code></li><li>管理目录下的文件状态<br><code>git status</code><br>注：新增的文件和修改过后的文件都是红色</li><li>管理指定文件（红变绿）<br><code>git add 文件名</code><br><code>git add .</code><br><code>git add -a</code><br><code>git add --all</code></li><li>个人信息配置：用户名、邮箱【一次即可】<br><code>git config --global user.email &quot;Your email&quot;</code><br><code>git config --global user.name &quot;Your Name&quot;</code></li><li>生成版本<br><code>git commit -m &#39;描述信息&#39;</code></li><li>查看版本记录<br><code>git log</code></li></ul><h1 id="git-branch"><a href="#git-branch" class="headerlink" title="git branch"></a>git branch</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs bash">//报错信息 <br>//error: pathspec <span class="hljs-string">&#x27;XXX&#x27;</span> did not match any file(s) known to git<br><br>git branch //查看本地分支<br>git branch -a //查看所有分支<br>git fetch //获取远程分支<br>git checkout -b &lt;branch_name&gt; origin/&lt;branch_name&gt; //创建本地分支<br>git branch -d &lt;branch_name&gt; //删除本地分支<br><br>git <span class="hljs-built_in">clone</span> &lt;url&gt; //克隆项目<br>git <span class="hljs-built_in">clone</span> -b &lt;branch_name&gt; &lt;url&gt; //克隆指定分支的项目<br><br>git merge //合并分支<br>git merge &lt;branch_name&gt; //合并分支<br></code></pre></td></tr></table></figure><h3 id="Uncommitted-changes"><a href="#Uncommitted-changes" class="headerlink" title="Uncommitted changes"></a>Uncommitted changes</h3><p>Uncommitted changes, however (even staged), will be lost. Make sure to stash and commit anything you need. For that you can run the following:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git stash<br></code></pre></td></tr></table></figure><p>And then to reapply these uncommitted changes:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git stash pop<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
@@ -55,6 +94,14 @@
       
     </categories>
     
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+      <tag>version control</tag>
+      
+    </tags>
     
   </entry>
   
