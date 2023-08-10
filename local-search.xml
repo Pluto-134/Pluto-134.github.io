@@ -23,6 +23,25 @@
   
   
   <entry>
+    <title>Hexo</title>
+    <link href="/2023/08/10/Hexo/"/>
+    <url>/2023/08/10/Hexo/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-基本使用"><a href="#Hexo-基本使用" class="headerlink" title="Hexo 基本使用"></a>Hexo 基本使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new <span class="hljs-string">&quot;name&quot;</span>       <span class="hljs-comment"># 新建文章</span><br>hexo new page <span class="hljs-string">&quot;name&quot;</span>  <span class="hljs-comment"># 新建页面</span><br>hexo g                <span class="hljs-comment"># 生成页面</span><br>hexo d                <span class="hljs-comment"># 部署</span><br>hexo g -d             <span class="hljs-comment"># 生成页面并部署</span><br>hexo s                <span class="hljs-comment"># 本地预览</span><br>hexo clean            <span class="hljs-comment"># 清除缓存和已生成的静态文件</span><br>hexo <span class="hljs-built_in">help</span>             <span class="hljs-comment"># 帮助</span><br></code></pre></td></tr></table></figure><h1 id="贴一些链接"><a href="#贴一些链接" class="headerlink" title="贴一些链接"></a>贴一些链接</h1><p><a href="https://docs.github.com/en/pages/quickstart">Quickstart for GitHub Pages - GitHub Docs</a><br><a href="https://zhuanlan.zhihu.com/p/60578464">使用 Hexo+GitHub 搭建个人免费博客教程（小白向） - 知乎</a><br><a href="https://moeci.com/posts/hexo-typora/">Hexo + Typora + 开发Hexo插件 解决图片路径不一致 | yiyun’s Blog</a><br><a href="https://fluid-dev.github.io/hexo-fluid-docs/">Hexo Fluid 用户手册</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>tool</category>
+      
+    </categories>
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>git</title>
     <link href="/2023/08/09/git/"/>
     <url>/2023/08/09/git/</url>
