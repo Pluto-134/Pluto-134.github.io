@@ -16,23 +16,24 @@
   <meta name="author" content="Pluto">
   <meta name="keywords" content="">
   
-    <meta name="description" content="GPG是一种加密方式，可以用来加密文件，也可以用来对文件进行签名，还可以用来对Git commit进行签名，以确保是密钥拥有者本人操作。这里记录一些常用指令和使用方法">
+    <meta name="description" content="打开Terminal 右键点击桌面，选择“open in terminal” Ctrl+Alt+T  在终端中输入sudo passwd root 如果想获得root权限，只需进行如下的操作su root 如果要再次禁用 root 帐号，那么可以执行sudo passwd -l root 列出文件夹下的文件ls 列出文件夹下的文件，包括隐藏文件ls -a 列出主文件夹下的包括与文件相关属性的内容信">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GPG">
-<meta property="og:url" content="https://pluto-134.github.io/2023/08/10/gpg/index.html">
+<meta property="og:title" content="Ubuntu">
+<meta property="og:url" content="https://pluto-134.github.io/2023/12/10/Ubuntu/index.html">
 <meta property="og:site_name" content="Pluto&#39;s notebook">
-<meta property="og:description" content="GPG是一种加密方式，可以用来加密文件，也可以用来对文件进行签名，还可以用来对Git commit进行签名，以确保是密钥拥有者本人操作。这里记录一些常用指令和使用方法">
+<meta property="og:description" content="打开Terminal 右键点击桌面，选择“open in terminal” Ctrl+Alt+T  在终端中输入sudo passwd root 如果想获得root权限，只需进行如下的操作su root 如果要再次禁用 root 帐号，那么可以执行sudo passwd -l root 列出文件夹下的文件ls 列出文件夹下的文件，包括隐藏文件ls -a 列出主文件夹下的包括与文件相关属性的内容信">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-08-09T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-08-10T07:40:00.975Z">
+<meta property="article:published_time" content="2023-12-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-10T08:56:56.470Z">
 <meta property="article:author" content="Pluto">
-<meta property="article:tag" content="Git">
-<meta property="article:tag" content="GPG">
+<meta property="article:tag" content="Ubuntu">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Terminal">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>GPG - Pluto&#39;s notebook</title>
+  <title>Ubuntu - Pluto&#39;s notebook</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -198,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="GPG"></span>
+            <span id="subtitle" data-typed-text="Ubuntu"></span>
           
         </div>
 
@@ -209,8 +210,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-08-10 00:00" pubdate>
-          August 10, 2023 am
+        <time datetime="2023-12-10 00:00" pubdate>
+          December 10, 2023 am
         </time>
       </span>
     
@@ -221,7 +222,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k words
+          240 words
         
       </span>
     
@@ -232,7 +233,7 @@
         
         
         
-          14 mins
+          3 mins
         
       </span>
     
@@ -269,48 +270,23 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">GPG</h1>
+            <h1 id="seo-header">Ubuntu</h1>
             
             
               <div class="markdown-body">
                 
-                <p>GPG是一种加密方式，可以用来加密文件，也可以用来对文件进行签名，还可以用来对Git commit进行签名，以确保是密钥拥有者本人操作。这里记录一些常用指令和使用方法</p>
-<span id="more"></span>
-
-<h1 id="gpg相关指令"><a href="#gpg相关指令" class="headerlink" title="gpg相关指令"></a>gpg相关指令</h1><p>查看版本</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg --version  // 查看gpg版本<br>gpg --<span class="hljs-built_in">help</span> // 查看帮助<br></code></pre></td></tr></table></figure>
-
-<p>生成密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg --gen-key // 用默认参数生成密钥对<br>gpg --full-generate-key // 生成密钥对(列出所有可选项)<br>gpg -a --gen-revoke [用户ID] &gt; gpg_revoke.rev // 生成撤销证书<br></code></pre></td></tr></table></figure>
-
-<p>列出密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg --list-secret-keys --keyid-format LONG // 列出密钥 包含keyid<br>gpg -a --<span class="hljs-built_in">export</span> [用户ID] &gt; gpg_public.pub // 导出公钥 -a表示-armor,以ASCII码输出(默认以二进制输出)<br>gpg -a --export-secret-key [用户ID] &gt; gpg_secret.sec // 导出私钥<br>gpg --import .key // 导入公钥或私钥<br></code></pre></td></tr></table></figure>
-
-<p>发布密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg --keyserver pool.sks-keyservers.net --send-keys [用户ID] // 发布密钥<br>gpg --keyserver pool.sks-keyservers.net --recv-keys [用户ID] // 获取密钥<br></code></pre></td></tr></table></figure>
-
-<p>吊销密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg --import gpg_revoke.rev // 吊销密钥<br>gpg --keyserver pool.sks-keyservers.net --send-keys [用户ID] // 更新吊销信息<br></code></pre></td></tr></table></figure>
-
-<p>删除密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg --delete-keys keyid // 删除公钥<br>gpg --delete-secret-keys // 删除私钥<br></code></pre></td></tr></table></figure>
-
-<h1 id="gpg使用"><a href="#gpg使用" class="headerlink" title="gpg使用"></a>gpg使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg -e -r [接收者ID] -o [输出文件] [待加密文件] // 加密 -r表示recipient -e表示encrypt <br>gpg -d -u [用户ID] -o [输出文件] [加密文件] // 解密 -d表示decrypt<br>gpg -u [用户ID] -s [待签名文件] // 签名<br>gpg -u [用户ID] -r [接收者ID] -se [待签名加密文件]  // 签名加密同时进行<br>gpg --verify [待验证文件] // 验证签名<br></code></pre></td></tr></table></figure>
-
-<h1 id="git中使用gpg"><a href="#git中使用gpg" class="headerlink" title="git中使用gpg"></a>git中使用gpg</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">gpg --list-secret-keys --keyid-format=long // 列出密钥<br>git config --global user.signingkey [主键ID] // 设置git使用的gpg密钥 主键ID即为上述命令列出的sec rsa4096/后的内容<br>git config --global commit.gpgsign <span class="hljs-literal">true</span> // 设置git提交时自动签名<br></code></pre></td></tr></table></figure>
-
-
-<h1 id="利用-GPG-私钥对-Git-commit-进行签名"><a href="#利用-GPG-私钥对-Git-commit-进行签名" class="headerlink" title="利用 GPG 私钥对 Git commit 进行签名"></a>利用 GPG 私钥对 Git commit 进行签名</h1><p>首先，需要让 Git 知道签名所用的 GPG 密钥 ID：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.signingkey &#123;key_id&#125;<br></code></pre></td></tr></table></figure>
-
-<p>然后，在每次 commit 的时候，加上<code>-S</code>参数，表示这次提交需要用 GPG 密钥进行签名：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git commit -S -m <span class="hljs-string">&quot;...&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>如果觉得每次都需要手动加上<code>-S</code>有些麻烦，可以设置 Git 为每次 commit 自动要求签名：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global commit.gpgsign <span class="hljs-literal">true</span><br></code></pre></td></tr></table></figure>
-
-<p>但不论是否需要手动加上<code>-S</code>，在 commit 时皆会弹出对话框，需要输入该密钥的密码，以确保是密钥拥有者本人操作<br>输入正确密码后，本次 commit 便被签名验证，push 到 Github 远程仓库后，即可显示出 Verified 绿色标记</p>
-<h1 id="贴一些参考链接"><a href="#贴一些参考链接" class="headerlink" title="贴一些参考链接"></a>贴一些参考链接</h1><p><a target="_blank" rel="noopener" href="http://ruanyifeng.com/blog/2013/07/gpg.html">http://ruanyifeng.com/blog/2013/07/gpg.html</a><br><a target="_blank" rel="noopener" href="https://yexun1995.github.io/2020/09/15/GPG/">https://yexun1995.github.io/2020/09/15/GPG/</a><br><a target="_blank" rel="noopener" href="https://blog.ginshio.org/2020/gpg_started_guide/">https://blog.ginshio.org/2020/gpg_started_guide/</a></p>
+                <h3 id="打开Terminal"><a href="#打开Terminal" class="headerlink" title="打开Terminal"></a>打开Terminal</h3><ol>
+<li>右键点击桌面，选择“open in terminal”</li>
+<li>Ctrl+Alt+T</li>
+</ol>
+<h3 id="在终端中输入"><a href="#在终端中输入" class="headerlink" title="在终端中输入"></a>在终端中输入</h3><p><code>sudo passwd root</code></p>
+<h3 id="如果想获得root权限，只需进行如下的操作"><a href="#如果想获得root权限，只需进行如下的操作" class="headerlink" title="如果想获得root权限，只需进行如下的操作"></a>如果想获得root权限，只需进行如下的操作</h3><p><code>su root</code></p>
+<h3 id="如果要再次禁用-root-帐号，那么可以执行"><a href="#如果要再次禁用-root-帐号，那么可以执行" class="headerlink" title="如果要再次禁用 root 帐号，那么可以执行"></a>如果要再次禁用 root 帐号，那么可以执行</h3><p><code>sudo passwd -l root</code></p>
+<h3 id="列出文件夹下的文件"><a href="#列出文件夹下的文件" class="headerlink" title="列出文件夹下的文件"></a>列出文件夹下的文件</h3><p><code>ls</code></p>
+<h3 id="列出文件夹下的文件，包括隐藏文件"><a href="#列出文件夹下的文件，包括隐藏文件" class="headerlink" title="列出文件夹下的文件，包括隐藏文件"></a>列出文件夹下的文件，包括隐藏文件</h3><p><code>ls -a</code></p>
+<h3 id="列出主文件夹下的包括与文件相关属性的内容信息"><a href="#列出主文件夹下的包括与文件相关属性的内容信息" class="headerlink" title="列出主文件夹下的包括与文件相关属性的内容信息"></a>列出主文件夹下的包括与文件相关属性的内容信息</h3><p><code>ls -l</code></p>
+<h3 id="显示当前目录的绝对路径"><a href="#显示当前目录的绝对路径" class="headerlink" title="显示当前目录的绝对路径"></a>显示当前目录的绝对路径</h3><p><code>pwd</code></p>
+<h3 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h3><p><code>sudo apt-get install &lt;package name&gt;</code>   </p>
 
                 
               </div>
@@ -344,9 +320,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Git/" class="print-no-link">#Git</a>
+        <a href="/tags/Ubuntu/" class="print-no-link">#Ubuntu</a>
       
-        <a href="/tags/GPG/" class="print-no-link">#GPG</a>
+        <a href="/tags/Linux/" class="print-no-link">#Linux</a>
+      
+        <a href="/tags/Terminal/" class="print-no-link">#Terminal</a>
       
     </div>
   
@@ -358,8 +336,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>GPG</div>
-      <div>https://pluto-134.github.io/2023/08/10/gpg/</div>
+      <div>Ubuntu</div>
+      <div>https://pluto-134.github.io/2023/12/10/Ubuntu/</div>
     </div>
     <div class="license-meta">
       
@@ -371,7 +349,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>Posted on</div>
-          <div>August 10, 2023</div>
+          <div>December 10, 2023</div>
         </div>
       
       
@@ -403,9 +381,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/" title="String相关处理">
+                      <a href="/2023/12/10/Data%20System/" title="">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">String相关处理</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -413,8 +391,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/10/Hexo/" title="Hexo">
-                        <span class="hidden-mobile">Hexo</span>
+                      <a href="/2023/12/10/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E5%85%B3%E5%A4%84%E7%90%86/" title="String相关处理">
+                        <span class="hidden-mobile">String相关处理</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
